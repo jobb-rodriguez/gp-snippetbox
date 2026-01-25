@@ -24,13 +24,17 @@ func snippetView(w http.ResponseWriter, r *http.Request) {
 }
 
 func snippetCreate(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Diplsay a form for creating a new snippet"))
+	w.WriteHeader(http.StatusCreated)
+
+	msg := fmt.Sprintf("Display a form for creating a new snippet")
+	w.Write([]byte(msg))
 }
 
 func snippetCreatePost(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusCreated)
 
-	w.Write([]byte("Save a new snippet..."))
+	msg := fmt.Sprintf("Save a new snippet...")
+	w.Write([]byte(msg))
 }
 
 func main() {
