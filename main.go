@@ -8,6 +8,7 @@ import (
 )
 
 func home(w http.ResponseWriter, r *http.Request) {
+	// Header Methods: Set(), Add(), Del(), Get(), Values()
 	w.Header().Add("Server", "Go")
 	w.Write([]byte("Hello from Snippetbox"))
 }
