@@ -25,3 +25,9 @@ mysql -u root -p
 
 > [!NOTE]
 > See ```internal/sql``` for SQL commands.
+
+# Git
+```
+# Deleting in remote branch (remote_name is usually main)
+git push <remote_name> --delete <branch_name>
+```
