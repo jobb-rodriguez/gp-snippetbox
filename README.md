@@ -13,3 +13,19 @@ This is a go project in accordnace with Let's Go book.
 6. Centralized Errors can also be a model to other solutions.
 7. Dependency injection makes your code more explicit, less error-prone, and easier to unit test than if you use global variables.
   - Do not use DI for (a) simple applications, (b) high-performance applications, (c) strict applications.
+
+# MySQL
+```bash
+# installation
+brew install mysql
+
+# scaffold
+sudo mysql
+
+# alternate + enter password during installation
+mysql -u root -p
+```
+
+> [!NOTE]
+> See ```internal/sql``` for SQL commands.
+
