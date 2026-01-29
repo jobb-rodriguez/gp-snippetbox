@@ -31,3 +31,31 @@ mysql -u root -p
 # Deleting in remote branch (remote_name is usually main)
 git push <remote_name> --delete <branch_name>
 ```
+
+## Conventional Commits
+[conventionalcommits.org](https://www.conventionalcommits.org/)
+
+```
+<type>[optional scope]: <description>
+
+[optional body]
+
+[optional footer(s)]
+```
+
+1. ```fix```: a commit of the type fix patches a bug in your codebase (this correlates with PATCH in Semantic Versioning).
+2. ```feat```: a commit of the type feat introduces a new feature to the codebase (this correlates with MINOR in Semantic Versioning).
+3. BREAKING CHANGE: a commit that has a footer BREAKING CHANGE:, or appends a ! after the type/scope, introduces a breaking API change (correlating with MAJOR in Semantic Versioning). A BREAKING CHANGE can be part of commits of any type.
+4. types other than fix: and feat: are allowed, for example @commitlint/config-conventional (based on the Angular convention) recommends build:, chore:, ci:, docs:, style:, refactor:, perf:, test:, and others.
+5. footers other than BREAKING CHANGE: <description> may be provided and follow a convention similar to git trailer format.
+
+**Types based on Angular Convention**
+1. build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+2. ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+3. docs: Documentation only changes
+4. feat: A new feature
+5. fix: A bug fix
+6. perf: A code change that improves performance
+7. refactor: A code change that neither fixes a bug nor adds a feature
+8. style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+9. test: Adding missing tests or correcting existing tests
