@@ -10,6 +10,16 @@
 6. Centralized Errors can also be a model to other solutions.
 7. Dependency injection makes your code more explicit, less error-prone, and easier to unit test than if you use global variables.
   - Do not use DI for (a) simple applications, (b) high-performance applications, (c) strict applications.
+8. Database specific notes
+  - Install drivers: [Go Drivers](https://go.dev/wiki/SQLDrivers)
+    - Use ```@v1``` to refer to major version 1 and use the latest minor version.
+  - Modules
+  - Connecting
+  - Designing database models
+  - Executing SQL statements
+  - Single-record
+  - Multiple-record
+  - Transactions
 
 # MySQL
 ```bash
