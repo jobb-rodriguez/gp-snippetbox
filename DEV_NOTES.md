@@ -19,7 +19,8 @@
     - ```go mod download``` allows uesrs to download the needed packages.
     - ```go get -u <link>```: ```-u``` allows to get the minor or patch release.
     - ```go mod tidy``` automatically removes any unused packages.
-  - Connecting
+  - Creating a database connection pool: ```sql.Open()```
+    - Read [```sql.DB```](https://pkg.go.dev/database/sql#DB)
   - Designing database models
   - Executing SQL statements
   - Single-record
@@ -36,6 +37,10 @@ sudo mysql
 
 # alternate + enter password during installation
 mysql -u root -p
+
+# Change password of dolphin user
+ALTER USER dolphin@localhost
+IDENTIFIED BY 'qDvOD3@L10'; -- new password
 ```
 
 > [!NOTE]
