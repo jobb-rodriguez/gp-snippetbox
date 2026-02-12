@@ -14,6 +14,11 @@
   - Install drivers: [Go Drivers](https://go.dev/wiki/SQLDrivers)
     - Use ```@v1``` to refer to major version 1 and use the latest minor version.
   - Modules
+    - ```go mod verify``` verifies the checksums of ```go.mod``` referencing ```go.sum```.
+    - ```go.sum``` should not be edited.
+    - ```go mod download``` allows uesrs to download the needed packages.
+    - ```go get -u <link>```: ```-u``` allows to get the minor or patch release.
+    - ```go mod tidy``` automatically removes any unused packages.
   - Connecting
   - Designing database models
   - Executing SQL statements
