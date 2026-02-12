@@ -61,6 +61,12 @@ git push <remote_name> --delete <branch_name>
 [optional body]
 
 [optional footer(s)]
+
+e.g., Breaking Change example
+feat(api)!: send an email to the customer when a product is shipped
+
+e.g., Commit message with scope
+feat(lang): add Polish language
 ```
 
 1. ```fix```: a commit of the type fix patches a bug in your codebase (this correlates with PATCH in Semantic Versioning).
