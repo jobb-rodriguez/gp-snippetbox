@@ -23,6 +23,13 @@
     - Read [```sql.DB```](https://pkg.go.dev/database/sql#DB)
   - Designing database models
     - A database model can be used by other applications in the future like a CLI. Hence, it belongs to ```internal```.
+    - Query
+      - ```DB.Query()``` is used for SELECT queries which return multiple rows.
+      - ```DB.QueryRow()``` is used for SELECT queries which return a single row.
+      - ```DB.Exec()``` is used for statements which don’t return rows (like INSERT and DELETE).
+      - For specific commands, check the documentation of the driver.
+      - Placeholder help avoid SQL injection attacks
+      - PostgreSQL uses the ```$N``` notation instead of the ```?``` notation.
   - Executing SQL statements
   - Single-record
   - Multiple-record
