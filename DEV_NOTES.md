@@ -22,6 +22,7 @@
   - Creating a database connection pool: ```sql.Open()```
     - Read [```sql.DB```](https://pkg.go.dev/database/sql#DB)
   - Designing database models
+    - A database model can be used by other applications in the future like a CLI. Hence, it belongs to ```internal```.
   - Executing SQL statements
   - Single-record
   - Multiple-record

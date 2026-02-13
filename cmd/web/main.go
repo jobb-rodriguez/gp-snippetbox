@@ -6,12 +6,16 @@ import (
 	"log/slog"
 	"net/http"
 	"os"
+
+	"snippetbox.jobbrodriguez.com/internal/models"
+
 	// _ indicates a blank identifier
 	_ "github.com/go-sql-driver/mysql"
 )
 
 type application struct {
-	logger *slog.Logger
+	logger 		*slog.Logger
+	snippets	*models.SnippetModel
 }
 
 func main() {
