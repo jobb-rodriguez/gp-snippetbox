@@ -3,7 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
-	"html/template"
+	// "html/template"
 	"net/http"
 	"strconv"
 
@@ -13,6 +13,18 @@ import (
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	// Header Methods: Set(), Add(), Del(), Get(), Values()
 	w.Header().Add("Server", "Go")
+
+	snippets, err := app.snippets.Latest()
+	if err != nil {
+		app.serverError(w, r, err)
+		return
+	}
+
+	for _, snippet := range snippets {
+		fmt.Fprintf(w, "%+v\n", snippet)
+	}
+	
+	/* 
 	files := []string{
 		"./ui/html/base.tmpl",
 		"./ui/html/partials/nav.tmpl",
@@ -29,6 +41,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		app.serverError(w, r, err)
 	}
+	*/
 }
 
 func (app *application) snippetView(w http.ResponseWriter, r *http.Request) {

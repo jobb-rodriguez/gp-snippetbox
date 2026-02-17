@@ -42,7 +42,11 @@
       - For Time and Date, it's driver specific.
     - Use ```errors.Is()``` to check whether error matches.
   - Multiple-record
+    - ```defer``` defers the execution of a function until the surrounding function returns.
   - Transactions
+
+> [!IMPORTANT]
+> Closing a resultset with defer rows.Close() is critical in the code above. As long as a resultset is open it will keep the underlying database connection open
 
 # MySQL
 ```bash
