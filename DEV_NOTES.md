@@ -44,9 +44,25 @@
   - Multiple-record
     - ```defer``` defers the execution of a function until the surrounding function returns.
   - Transactions
+    - There is no guarantee that the db will use the same db connection. The solution is to use transactions.
+    - ```Begin()``` creates a new ```sql.Tx``` object.
+    - ```defer tx.Rollback()``` ensures it at the latest commit or most recent version if there is an error.
+    - If there are no errors, call ```tx.Commit()```
+    - Use transactions for commands with multiple statements.
 
 > [!IMPORTANT]
 > Closing a resultset with defer rows.Close() is critical in the code above. As long as a resultset is open it will keep the underlying database connection open
+
+> [!NOTE]
+> Go allows you to write portable code with ```database/sql``` package. However, read the driver documentation tot understand quirks and edge cases.
+
+> [!DANGER]
+> Go doesn't manage ```NULL``` values well. Avoid ```NULL``` values. SET ```NOT NULL``` cosntraints on all database columngs, along with sensible ```DEFAULT``` values as necessary.
+
+> [!IMPORTANT]
+> You must always call either Rollback() or Commit() before your function returns. If you don’t the connection will stay open and not be returned to the connection pool. This can lead to hitting your maximum connection limit/running out of resources. The simplest way to avoid this is to use defer tx.Rollback() like we are in the example above.
+
+9. somethign
 
 # MySQL
 ```bash
