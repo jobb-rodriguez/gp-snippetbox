@@ -62,8 +62,6 @@
 > [!IMPORTANT]
 > You must always call either Rollback() or Commit() before your function returns. If you don’t the connection will stay open and not be returned to the connection pool. This can lead to hitting your maximum connection limit/running out of resources. The simplest way to avoid this is to use defer tx.Rollback() like we are in the example above.
 
-9. somethign
-
 # MySQL
 ```bash
 # installation
@@ -82,6 +80,14 @@ IDENTIFIED BY 'qDvOD3@L10'; -- new password
 
 > [!NOTE]
 > See ```internal/sql``` for SQL commands.
+
+9. Dynamic HTML templates
+  - As a general rule, my advice is to get into the habit of always pipelining dot whenever you invoke a template with the {{template}} or {{block}} actions, unless you have a good reason not to.
+  - ```html/template``` helps in avoiding XSS attacks.
+  - Template actions aand functions
+    - ```{{<keyword> .Foo}} C1 {{else}} C2 {{end}}```
+    - ```<keyword>```: {if, with, range} (with and range change the value of dot)
+    - [Read functions here](https://pkg.go.dev/text/template#hdr-Functions)
 
 # Git
 ```
