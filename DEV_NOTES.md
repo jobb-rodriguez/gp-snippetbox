@@ -88,6 +88,12 @@ IDENTIFIED BY 'qDvOD3@L10'; -- new password
     - ```{{<keyword> .Foo}} C1 {{else}} C2 {{end}}```
     - ```<keyword>```: {if, with, range} (with and range change the value of dot)
     - [Read functions here](https://pkg.go.dev/text/template#hdr-Functions)
+  - Caching
+    - Why? Reduce code duplication
+    - How?
+      - Create an in-memory map in templates
+      - Initialize the cache in main() and set it as a dependency via the application struct
+      - Create a render helper method, which is called in handlers
 
 # Git
 ```
