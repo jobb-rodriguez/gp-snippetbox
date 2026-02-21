@@ -94,6 +94,9 @@ IDENTIFIED BY 'qDvOD3@L10'; -- new password
       - Create an in-memory map in templates
       - Initialize the cache in main() and set it as a dependency via the application struct
       - Create a render helper method, which is called in handlers
+    - Error handling
+      - Handle cache run-time errors with Buffers (read bytes, 8-bit string)
+
 
 # Git
 ```
